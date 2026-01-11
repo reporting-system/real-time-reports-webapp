@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Head from "next/head";
 
 import BackgroundDynamic from "./components/dynamic/background";
+import Providers from "./theme/providers";
 
 export const metadata: Metadata = {
   title: "Ambitrack",
@@ -32,14 +33,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <body>
-        <BackgroundDynamic />
-        {children}
+        <Providers>
+          <BackgroundDynamic />
+          {children}
+        </Providers>
       </body>
     </html>
   );
