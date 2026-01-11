@@ -2,6 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Head from "next/head";
 
+import BackgroundDynamic from "./components/dynamic/background";
+
 export const metadata: Metadata = {
   title: "Ambitrack",
   description:
@@ -35,7 +37,10 @@ export default function RootLayout({
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <body>{children}</body>
+      <body>
+        <BackgroundDynamic />
+        {children}
+      </body>
     </html>
   );
 }
