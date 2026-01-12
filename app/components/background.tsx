@@ -4,36 +4,47 @@ import { useState } from "react";
 import { useTheme } from "next-themes";
 
 const gradient_list = [
-  "linear-gradient(135deg, #667eea, #764ba2)",
-  "linear-gradient(135deg, #89f7fe, #66a6ff)",
-  "linear-gradient(135deg, #f6d365, #fda085)",
-  "linear-gradient(135deg, #fbc2eb, #a6c1ee)",
-  "linear-gradient(135deg, #fdcbf1, #e6dee9)",
-  "linear-gradient(135deg, #a1c4fd, #c2e9fb)",
-  "linear-gradient(135deg, #ff9a9e, #fad0c4)",
-  "linear-gradient(135deg, #84fab0, #8fd3f4)",
-  "linear-gradient(135deg, #fccb90, #d57eeb)",
-  "linear-gradient(135deg, #e0c3fc, #8ec5fc)",
-  "linear-gradient(135deg, #f093fb, #f5576c)",
-  "linear-gradient(135deg, #4facfe, #00f2fe)",
-  "linear-gradient(135deg, #43e97b, #38f9d7)",
-  "linear-gradient(135deg, #fa709a, #fee140)",
-  "linear-gradient(135deg, #30cfd0, #330867)",
-  "linear-gradient(135deg, #5f72bd, #9b23ea)",
-  "linear-gradient(135deg, #c471f5, #fa71cd)",
-  "linear-gradient(135deg, #48c6ef, #6f86d6)",
-  "linear-gradient(135deg, #fdfbfb, #ebedee)",
-  "linear-gradient(135deg, #accbee, #e7f0fd)",
-  "linear-gradient(135deg, #d4fc79, #96e6a1)",
-  "linear-gradient(135deg, #fddb92, #d1fdff)",
-  "linear-gradient(135deg, #a18cd1, #fbc2eb)",
-  "linear-gradient(135deg, #fad0c4, #ffd1ff)",
-  "linear-gradient(135deg, #ffecd2, #fcb69f)",
-  "linear-gradient(135deg, #cfd9df, #e2ebf0)",
-  "linear-gradient(135deg, #bdc2e8, #e6dee9)",
-  "linear-gradient(135deg, #6a11cb, #2575fc)",
-  "linear-gradient(135deg, #ff758c, #ff7eb3)",
-  "linear-gradient(135deg, #2193b0, #6dd5ed)",
+  `
+  radial-gradient(circle at 20% 20%, #7b1fa2, transparent 50%),
+  radial-gradient(circle at 80% 30%, #d32f2f, transparent 50%),
+  radial-gradient(circle at 50% 80%, #1a237e, transparent 50%),
+  #0b0613
+  `,
+  `
+  radial-gradient(circle at top, #1b5e20, transparent 55%),
+  radial-gradient(circle at bottom, #0d2818, transparent 60%),
+  #050a07
+  `,
+  `
+  radial-gradient(circle at 30% 20%, #0d47a1, transparent 55%),
+  radial-gradient(circle at 70% 80%, #001e3c, transparent 60%),
+  #020814
+  `,
+  `
+  radial-gradient(circle at top left, #ff6f00, transparent 50%),
+  radial-gradient(circle at bottom right, #c2185b, transparent 55%),
+  #12060f
+  `,
+  `
+  radial-gradient(circle at 40% 30%, #006064, transparent 55%),
+  radial-gradient(circle at 70% 70%, #00363a, transparent 60%),
+  #020b0c
+  `,
+  `
+  radial-gradient(circle at 20% 30%, #ec407a, transparent 50%),
+  radial-gradient(circle at 80% 70%, #8e24aa, transparent 55%),
+  #0c0612
+  `,
+  `
+  radial-gradient(circle at 30% 25%, #2e7d32, transparent 55%),
+  radial-gradient(circle at 70% 75%, #1b5e20, transparent 60%),
+  #040a06
+  `,
+  `
+  radial-gradient(circle at 50% 20%, #b71c1c, transparent 55%),
+  radial-gradient(circle at 30% 80%, #4a0404, transparent 60%),
+  #0a0202
+  `,
 ];
 
 export default function Background() {
@@ -47,8 +58,8 @@ export default function Background() {
     <>
       {resolvedTheme === "dark" && (
         <div
-          className="w-full h-52 opacity-30 absolute pointer-events-none -z-20 blur-3xl saturate-200 transition-all duration-700"
-          style={{ backgroundImage: gradient }}
+          className="w-full h-60 opacity-70 absolute pointer-events-none -z-20 blur-3xl transition-all duration-700"
+          style={{ background: gradient }}
         />
       )}
     </>
