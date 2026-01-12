@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from "react";
+import { useTheme } from "next-themes";
 
 const gradient_list = [
   "linear-gradient(135deg, #667eea, #764ba2)",
@@ -36,13 +37,20 @@ const gradient_list = [
 ];
 
 export default function Background() {
+  const { resolvedTheme } = useTheme();
+
   const [gradient] = useState(() => {
     return gradient_list[Math.floor(Math.random() * gradient_list.length)];
   });
+
   return (
-    <div
-      className="w-full h-52 opacity-30 absolute pointer-events-none -z-20 blur-3xl saturate-200 transition-all duration-700"
-      style={{ backgroundImage: gradient }}
-    />
+    <>
+      {resolvedTheme === "dark" && (
+        <div
+          className="w-full h-52 opacity-30 absolute pointer-events-none -z-20 blur-3xl saturate-200 transition-all duration-700"
+          style={{ backgroundImage: gradient }}
+        />
+      )}
+    </>
   );
 }
